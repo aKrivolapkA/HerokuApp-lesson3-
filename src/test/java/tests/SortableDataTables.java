@@ -15,7 +15,7 @@ import static org.testng.AssertJUnit.assertEquals;
 
  */
 public class SortableDataTables {
-    public static final String RESULT = "//input";
+
     @Test
     public void inputsTest() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
