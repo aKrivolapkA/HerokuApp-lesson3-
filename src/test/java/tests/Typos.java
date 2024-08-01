@@ -16,7 +16,7 @@ public class Typos {
     public static final String TEXT="This example demonstrates a typo being introduced. It does it randomly on each page load.";
     public static final String TEXT2="Sometimes you'll see a typo, other times you won't.";
     @Test
-    public void inputsTest() {
+    public void typesTest() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-search-engine-choice-screen");
