@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -18,15 +19,9 @@ public class AddRemoveElements {
 
         driver.findElement(By.xpath("//button[text()='Add Element']")).click();
         driver.findElement(By.xpath("//button[text()='Add Element']")).click();
-        //driver.findElement(By.xpath("//button[text()='Delete']")).click();
-        List<WebElement> elements= driver.findElements(By.xpath("//button[text()='Delete']"));
-        if(elements.size()==1){
-            System.out.println("на страницы одна кнопка- тест позитивный ");
-        }else {
-            System.err.println("тест негативный  ");
-            driver.quit();
-            System.exit(2);
-        }
+        driver.findElement(By.xpath("//button[text()='Delete']")).click();
+        int countOfElements = driver. findElements(By.xpath("//*[@id='elements']")). size();
+        Assert.assertEquals(countOfElements, 1);
         driver.quit();
 
     }
