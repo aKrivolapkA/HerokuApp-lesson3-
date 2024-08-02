@@ -10,8 +10,8 @@ import java.util.concurrent.TimeUnit;
 public class HerokuAppTest {
 
     @Test
-    public void inputTest(){
-        System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver");
+    public void inputTest() {
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://the-internet.herokuapp.com/inputs");
@@ -23,13 +23,13 @@ public class HerokuAppTest {
         //System.out.println(driver.getWindowHandle()); получить значение влкдаки соседней
         WebElement inputField = driver.findElement(By.xpath("//*[@type='number']"));
         inputField.sendKeys("20");
-        String actualText= inputField.getAttribute("value");
-        Assert.assertEquals(actualText,"20");
+        String actualText = inputField.getAttribute("value");
+        Assert.assertEquals(actualText, "20");
 
         inputField.sendKeys(Keys.ARROW_UP);// стрелка
-        String actualText1= inputField.getAttribute("value");
-        Assert.assertEquals(actualText1,"21");
-driver.quit();
+        String actualText1 = inputField.getAttribute("value");
+        Assert.assertEquals(actualText1, "21");
+        driver.quit();
 
 
     }
