@@ -20,6 +20,6 @@ public class ContextMenuTest extends BaseTest {
         Assert.assertEquals(contextMenuPage.getText(), popUpText);
         contextMenuPage
                 .acceptAlert()
-                .isElementDisplayed();
+                .isRandomeElementDisplayed();
     }
 }

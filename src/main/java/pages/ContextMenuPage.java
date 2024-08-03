@@ -15,7 +15,7 @@ import java.time.Duration;
 
 
 public class ContextMenuPage extends BasePage{
-
+    public static String popUpText="You selected a context menu";
     public ContextMenuPage(WebDriver driver) {
         super(driver);
     }
@@ -29,9 +29,8 @@ public class ContextMenuPage extends BasePage{
     WebElement elementClick;
 
     @FindBy(xpath = "//*[@id='content']")
-    WebElement someElement;
+    WebElement someRandomeElement;
 
-    public static String popUpText="You selected a context menu";
 
     public void clickElement(){
         Actions actions = new Actions(driver);
@@ -48,8 +47,8 @@ public class ContextMenuPage extends BasePage{
         alert.accept();
         return this;
     }
-    public boolean isElementDisplayed() {
-        return someElement.isDisplayed();
+    public boolean isRandomeElementDisplayed() {
+        return someRandomeElement.isDisplayed();
     }
 
 }
