@@ -9,6 +9,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pages.ContextMenuPage;
 import pages.DynamicControlsPage;
+import pages.FileUploadPage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -16,6 +17,7 @@ public class BaseTest {
     WebDriver driver;
     DynamicControlsPage dynamicControlsPage;
     ContextMenuPage contextMenuPage;
+    FileUploadPage fileUploadPage;
 
     @BeforeMethod
     public void initTest() {
@@ -32,6 +34,7 @@ public class BaseTest {
     public void initPages() {
         dynamicControlsPage = new DynamicControlsPage(driver);
         contextMenuPage = new ContextMenuPage(driver);
+        fileUploadPage = new FileUploadPage(driver);
     }
 
     @AfterMethod(alwaysRun = true)
