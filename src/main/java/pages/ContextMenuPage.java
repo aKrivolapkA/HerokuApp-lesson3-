@@ -16,12 +16,13 @@ import java.time.Duration;
 
 public class ContextMenuPage extends BasePage{
     public static String popUpText="You selected a context menu";
+    public static String url="http://the-internet.herokuapp.com/context_menu";
     public ContextMenuPage(WebDriver driver) {
         super(driver);
     }
     ContextMenuPage contextMenuPage;
     public ContextMenuPage openPage() {
-        driver.get("http://the-internet.herokuapp.com/context_menu");
+        driver.get(url);
         return this;
     }
 
