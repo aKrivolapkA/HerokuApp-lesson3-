@@ -19,6 +19,7 @@ public class BaseTest {
     FramesPage framesPage;
     AlertsPage alertsPage;
     JavaScriptExecutorPage javaScriptExecutorPage;
+    DragAndDropPage dragAndDropPage;
 
     @BeforeMethod
     public void initTest() {
@@ -38,7 +39,8 @@ public class BaseTest {
         fileUploadPage = new FileUploadPage(driver);
         framesPage = new FramesPage(driver);
         alertsPage = new AlertsPage(driver);
-        javaScriptExecutorPage= new JavaScriptExecutorPage(driver);
+        javaScriptExecutorPage = new JavaScriptExecutorPage(driver);
+        dragAndDropPage = new DragAndDropPage(driver);
     }
 
     @AfterMethod(alwaysRun = true)
