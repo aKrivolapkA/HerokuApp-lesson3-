@@ -7,9 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import pages.ContextMenuPage;
-import pages.DynamicControlsPage;
-import pages.FileUploadPage;
+import pages.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -18,6 +16,8 @@ public class BaseTest {
     DynamicControlsPage dynamicControlsPage;
     ContextMenuPage contextMenuPage;
     FileUploadPage fileUploadPage;
+    FramesPage framesPage;
+    AlertsPage alertsPage;
 
     @BeforeMethod
     public void initTest() {
@@ -35,6 +35,8 @@ public class BaseTest {
         dynamicControlsPage = new DynamicControlsPage(driver);
         contextMenuPage = new ContextMenuPage(driver);
         fileUploadPage = new FileUploadPage(driver);
+        framesPage = new FramesPage(driver);
+        alertsPage = new AlertsPage(driver);
     }
 
     @AfterMethod(alwaysRun = true)
