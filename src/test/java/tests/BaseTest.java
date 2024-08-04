@@ -20,6 +20,7 @@ public class BaseTest {
     AlertsPage alertsPage;
     JavaScriptExecutorPage javaScriptExecutorPage;
     DragAndDropPage dragAndDropPage;
+    FileDownloadPage fileDownloadPage;
 
     @BeforeMethod
     public void initTest() {
@@ -41,6 +42,7 @@ public class BaseTest {
         alertsPage = new AlertsPage(driver);
         javaScriptExecutorPage = new JavaScriptExecutorPage(driver);
         dragAndDropPage = new DragAndDropPage(driver);
+        //fileDownloadPage = new FileDownloadPage(driver);
     }
 
     @AfterMethod(alwaysRun = true)
