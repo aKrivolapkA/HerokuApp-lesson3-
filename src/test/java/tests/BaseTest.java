@@ -18,6 +18,7 @@ public class BaseTest {
     FileUploadPage fileUploadPage;
     FramesPage framesPage;
     AlertsPage alertsPage;
+    JavaScriptExecutorPage javaScriptExecutorPage;
 
     @BeforeMethod
     public void initTest() {
@@ -37,6 +38,7 @@ public class BaseTest {
         fileUploadPage = new FileUploadPage(driver);
         framesPage = new FramesPage(driver);
         alertsPage = new AlertsPage(driver);
+        javaScriptExecutorPage= new JavaScriptExecutorPage(driver);
     }
 
     @AfterMethod(alwaysRun = true)
