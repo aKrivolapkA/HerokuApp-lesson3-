@@ -9,9 +9,10 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
-public class FileDownloadPage{
+public class FileDownloadPage {
     WebDriver driver;
     public static String url = "http://the-internet.herokuapp.com/download";
+
     public void download() throws InterruptedException {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
@@ -30,9 +31,11 @@ public class FileDownloadPage{
         Thread.sleep(500);
         JavascriptExecutor js = (JavascriptExecutor) driver;
     }
-     public  boolean found = false;
+
+    public boolean found = false;
     public File f = null;
-    public void check(){
+
+    public void check() {
         File folder = new File(System.getProperty("user.dir"));
         File[] listOfFiles = folder.listFiles();
         for (File listOfFile : listOfFiles) {

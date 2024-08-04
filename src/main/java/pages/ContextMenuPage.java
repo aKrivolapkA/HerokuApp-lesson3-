@@ -1,7 +1,6 @@
 package pages;
 
 
-
 import org.openqa.selenium.Alert;
 
 import org.openqa.selenium.WebDriver;
@@ -14,13 +13,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 
-public class ContextMenuPage extends BasePage{
-    public static String popUpText="You selected a context menu";
-    public static String url="http://the-internet.herokuapp.com/context_menu";
+public class ContextMenuPage extends BasePage {
+    public static String popUpText = "You selected a context menu";
+    public static String url = "http://the-internet.herokuapp.com/context_menu";
+
     public ContextMenuPage(WebDriver driver) {
         super(driver);
     }
-    ContextMenuPage contextMenuPage;
+
     public ContextMenuPage openPage() {
         driver.get(url);
         return this;
@@ -32,24 +32,26 @@ public class ContextMenuPage extends BasePage{
     @FindBy(xpath = "//*[@id='content']")
     WebElement someRandomeElement;
 
+    public WebElement getSomeRandomeElement() {
+        return someRandomeElement;
+    }
 
-    public void clickElement(){
+    public void rightClickOnElement() {
         Actions actions = new Actions(driver);
         actions.contextClick(elementClick).perform();
     }
-    public String getText(){
+
+    public String getText() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
         return alert.getText();
     }
-    public ContextMenuPage acceptAlert(){
+
+    public ContextMenuPage acceptAlert() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
         alert.accept();
         return this;
-    }
-    public boolean isRandomeElementDisplayed() {
-        return someRandomeElement.isDisplayed();
     }
 
 }

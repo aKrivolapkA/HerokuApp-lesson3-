@@ -1,6 +1,5 @@
 package tests;
 
-import org.openqa.selenium.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -13,13 +12,14 @@ import static pages.ContextMenuPage.popUpText;
  */
 public class ContextMenuTest extends BaseTest {
     @Test
-    public void test1() {
+    public void testAcceptAlert() {
         contextMenuPage
                 .openPage()
-                .clickElement();
+                .rightClickOnElement();
         Assert.assertEquals(contextMenuPage.getText(), popUpText);
         contextMenuPage
-                .acceptAlert()
-                .isRandomeElementDisplayed();
+                .acceptAlert();
+        Assert.assertTrue(contextMenuPage.getSomeRandomeElement().isDisplayed());
+
     }
 }

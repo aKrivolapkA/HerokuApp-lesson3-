@@ -9,18 +9,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class AlertsPage extends BasePage{
-    public static String url="http://the-internet.herokuapp.com/javascript_alerts";
-    public static String exampleText ="some text";
+public class AlertsPage extends BasePage {
+    public static String url = "http://the-internet.herokuapp.com/javascript_alerts";
+    public static String exampleText = "some text";
 
     @FindBy(xpath = "//button[@onclick='jsAlert()']")
-    WebElement clickForJSAlertButton;
+    WebElement forJSAlertButton;
 
     @FindBy(xpath = "//button[@onclick='jsConfirm()']")
-    WebElement clickForJSConfirmButton;
+    WebElement forJSConfirmButton;
 
     @FindBy(xpath = "//button[@onclick='jsPrompt()']")
-    WebElement clickForJSPromptButton;
+    WebElement forJSPromptButton;
 
     @FindBy(xpath = " //*[@id='result']")
     WebElement result;
@@ -37,36 +37,39 @@ public class AlertsPage extends BasePage{
         driver.get(url);
         return this;
     }
-    public AlertsPage clickOnAlertButton(){
-        clickForJSAlertButton.click();
+
+    public AlertsPage clickOnAlertButton() {
+        forJSAlertButton.click();
         return this;
     }
 
-    public AlertsPage acceptAlert(){
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
+    public AlertsPage acceptAlert() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
         alert.accept();
         return this;
     }
 
-    public AlertsPage clickOnConfirmButton(){
-        clickForJSConfirmButton.click();
+    public AlertsPage clickOnConfirmButton() {
+        forJSConfirmButton.click();
         return this;
     }
-    public AlertsPage cancelAlert(){
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
+
+    public AlertsPage cancelAlert() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
         alert.dismiss();
         return this;
     }
-    public AlertsPage clickOnPromptButton(){
-        clickForJSPromptButton.click();
+
+    public AlertsPage clickOnPromptButton() {
+        forJSPromptButton.click();
         return this;
     }
 
-    public AlertsPage inputValue(){
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
-        Alert alert= wait.until(ExpectedConditions.alertIsPresent());
+    public AlertsPage inputValue() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
         alert.sendKeys(exampleText);
         return this;
     }

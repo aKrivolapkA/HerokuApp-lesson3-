@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
  */
 public class FileUploadTest extends BaseTest {
     @Test
-    public void test3() {
+    public void fileUploadTest() {
         fileUploadPage
                 .openPage()
                 .uploadFile()

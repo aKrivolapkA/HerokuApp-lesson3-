@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,8 +10,6 @@ import java.time.Duration;
 
 public class DynamicControlsPage extends BasePage {
     public static String url = "http://the-internet.herokuapp.com/dynamic_controls";
-
-    public static String waitingText = "It's gone!";// когда передаю стринг он не находит на странице
 
     @FindBy(xpath = "//*[@id ='checkbox']//input")
     public WebElement checkbox;
@@ -47,27 +44,23 @@ public class DynamicControlsPage extends BasePage {
         return this;
     }
 
-    public DynamicControlsPage waitUntilVisible() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.textToBePresentInElement(messageText, "It's gone!"));
-        return this;
-    }
-
     public boolean isElementInvisible() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(0));
         return wait.until(ExpectedConditions.invisibilityOf(checkbox));
     }
 
-    public boolean isInputDisable(){
+    public boolean isInputFieldDisable() {
         return inputField.isEnabled();
     }
-    public DynamicControlsPage clickOnEnableButton(){
+
+    public DynamicControlsPage clickOnEnableButton() {
         enableButton.click();
         return this;
     }
-    public DynamicControlsPage waitUntilVisible2() {
+
+    public DynamicControlsPage waitUntilVisible(String text) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.textToBePresentInElement(messageText, "It's enabled!"));
+        wait.until(ExpectedConditions.textToBePresentInElement(messageText, text));
         return this;
     }
 }

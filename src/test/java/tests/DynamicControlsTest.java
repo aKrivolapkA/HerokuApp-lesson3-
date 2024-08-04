@@ -2,6 +2,7 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 /*
 Найти чекбокс
 Нажать на кнопку
@@ -13,19 +14,19 @@ import org.testng.annotations.Test;
 Дождаться надписи “It's enabled!”
 Проверить, что инпут enabled
  */
-public class DynamicControlsTest  extends  BaseTest{
+public class DynamicControlsTest extends BaseTest {
     @Test
-    public void test2() {
+    public void dynamicControlsTest() {
         dynamicControlsPage
                 .openPage()
                 .clickCheckbox()
                 .clickRemoveButton()
-                .waitUntilVisible();
+                .waitUntilVisible("It's gone!");
         Assert.assertTrue(dynamicControlsPage.isElementInvisible());
-        Assert.assertFalse(dynamicControlsPage.isInputDisable());
+        Assert.assertFalse(dynamicControlsPage.isInputFieldDisable());
         dynamicControlsPage
                 .clickOnEnableButton()
-            .waitUntilVisible2();
-        Assert.assertTrue(dynamicControlsPage.isInputDisable());
+                .waitUntilVisible("It's enabled!");
+        Assert.assertTrue(dynamicControlsPage.isInputFieldDisable());
     }
 }
