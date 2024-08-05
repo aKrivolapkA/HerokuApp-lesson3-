@@ -8,8 +8,8 @@ import org.testng.annotations.Test;
 
 public class AddRemoveElements {
     @Test
-    public void addRemoveElementsTest(){
-        System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver");
+    public void addRemoveElementsTest() {
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://the-internet.herokuapp.com/add_remove_elements/");
@@ -17,7 +17,7 @@ public class AddRemoveElements {
         driver.findElement(By.xpath("//button[text()='Add Element']")).click();
         driver.findElement(By.xpath("//button[text()='Add Element']")).click();
         driver.findElement(By.xpath("//button[text()='Delete']")).click();
-        int countOfElements = driver. findElements(By.xpath("//*[@id='elements']")). size();
+        int countOfElements = driver.findElements(By.xpath("//*[@id='elements']")).size();
         Assert.assertEquals(countOfElements, 1);
         driver.quit();
     }
